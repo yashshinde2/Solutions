@@ -1,0 +1,37 @@
+class Rectangle{
+
+    int length;
+    int width;
+
+    public Rectangle(int length){
+
+        this.length = length;
+    }
+
+    public Rectangle(int length, int wodth){
+
+        this.length = length;
+        this.width = width;
+    }
+
+    public int calculateAreaofSquare(int length){
+
+        int areaS = length * length;
+        return areaS;
+    }
+
+    public int calculateAreaofRectangle(int length, int width){
+
+        int areaR = length * width;
+        return areaR;
+    }
+
+    public static void main(String[] args) {
+        
+        Rectangle r1 = new Rectangle();
+
+        r1.
+
+
+    }
+}

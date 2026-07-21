@@ -1,0 +1,4 @@
+54,Rugved Shelke,85
+55,Rupesh Patil,92
+99,Aditya Nikam,invalid
+104,Yash Shinde,75

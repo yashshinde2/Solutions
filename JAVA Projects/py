@@ -1,0 +1,45 @@
+import tkinter as tk
+from tkinter import ttk
+
+class MainActivity:
+    def _init_(self, root):
+        self.root = root
+        self.root.title("Indian Culture Search Engine")
+
+        self.search_entry = ttk.Entry(root, width=50)
+        self.search_entry.grid(row=0, column=0, padx=10, pady=10)
+
+        self.search_results_listbox = tk.Listbox(root, width=70)
+        self.search_results_listbox.grid(row=1, column=0, padx=10, pady=10)
+
+        # Sample cultural information about India
+        self.cultural_info_list = [
+            "Festivals: Diwali, Holi, Navaratri, etc.",
+            "Cuisine: Curry, Biryani, Samosa, etc.",
+            "Dance Forms: Bharatanatyam, Kathak, Odissi, etc.",
+            "Music: Classical (Carnatic, Hindustani), Bollywood, etc.",
+            "Art and Architecture: Taj Mahal, Ajanta and Ellora Caves, etc."
+            # Add more cultural information as needed
+        ]
+
+        self.update_search_results()
+
+        # Bind search function to entry widget
+        self.search_entry.bind("<KeyRelease>", self.search)
+
+    def update_search_results(self):
+        self.search_results_listbox.delete(0, tk.END)
+        for item in self.cultural_info_list:
+            self.search_results_listbox.insert(tk.END, item)
+
+    def search(self, event):
+        query = self.search_entry.get().lower()
+        filtered_results = [item for item in self.cultural_info_list if query in item.lower()]
+        self.search_results_listbox.delete(0, tk.END)
+        for item in filtered_results:
+            self.search_results_listbox.insert(tk.END, item)
+
+if __name__ == "_main_":
+    root = tk.Tk()
+    app = MainActivity(root)
+    root.mainloop()
