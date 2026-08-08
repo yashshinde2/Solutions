@@ -48,6 +48,30 @@ class BinaryTrees{
 
     }
 
+    public static void inOrder(Node root){
+
+        if(root == null){
+
+            return;
+        }
+
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
+
+    public static void postOrder(Node root){
+
+        if(root == null){
+
+            return;
+        }
+
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args){
 
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -55,7 +79,10 @@ class BinaryTrees{
         Node root = bt.BuildTree(nodes);
         // System.out.println(root.data);
 
-        preOrder(root);
+        // preOrder(root);
+        // inOrder(root);
+
+        postOrder(root);
 
     }
 }
