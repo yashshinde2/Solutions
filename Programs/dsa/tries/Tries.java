@@ -38,6 +38,28 @@ public class Tries{
 
     }
 
+    public static boolean search(String key){
+
+        Node curr = root;
+        for(int i=0; i<key.length(); i++){
+
+            int idx = key.charAt(i) - 'a';
+            Node node = curr.children[idx];
+
+            if(node == null){
+
+                return false;
+            }
+
+            if(i == key.length()-1 && node.eow == false){
+
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
 
 
