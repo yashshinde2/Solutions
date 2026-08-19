@@ -86,6 +86,18 @@ class Graph{
         }
 
     }
+
+    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]){
+
+        System.out.print(curr + " ");
+        vis[curr] = true;
+
+        for(int i=0; i<graph[curr].size(); i++){
+
+            Edge e = graph[curr].get(i);
+            dfs(graph, e.dest, vis);
+        }
+    }
     
     
     public static void main(String[] args){
@@ -96,7 +108,11 @@ class Graph{
         createGraph(graph);
         // printGraph(graph);
 
-        bfs(graph, v);
+        // bfs(graph, v);
+        // System.out.println();
+
+        boolean vis[] = new boolean[v];
+        dfs(graph, 0, vis);
         System.out.println();
     }
 }
