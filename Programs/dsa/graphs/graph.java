@@ -49,11 +49,12 @@ class Graph{
 
     public static void printGraph(ArrayList<Edge> graph[]) {
 
-    for (int i = 0; i < graph.length; i++) {
+        for (int i = 0; i < graph.length; i++) {
 
-        System.out.print("Vertex " + i + " -> ");
+            System.out.print("Vertex " + i + " -> ");
 
         for (Edge e : graph[i]) {
+            
             System.out.print(e.dest + " ");
         }
 
