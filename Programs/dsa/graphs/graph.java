@@ -95,7 +95,10 @@ class Graph{
         for(int i=0; i<graph[curr].size(); i++){
 
             Edge e = graph[curr].get(i);
+
+            if(vis[e.dest] == false){
             dfs(graph, e.dest, vis);
+            }
         }
     }
     
