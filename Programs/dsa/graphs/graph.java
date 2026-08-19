@@ -86,8 +86,6 @@ class Graph{
         }
 
     }
-
-
     
     
     public static void main(String[] args){
@@ -96,8 +94,9 @@ class Graph{
         ArrayList<Edge> graph[] = new ArrayList[v];
 
         createGraph(graph);
-        printGraph(graph);
+        // printGraph(graph);
 
         bfs(graph, v);
+        System.out.println();
     }
 }
