@@ -13,6 +13,7 @@ class Graph{
             this.dest = d;
 
         }
+        
     }
 
     public static void createGraph(ArrayList<Edge> graph[]){
