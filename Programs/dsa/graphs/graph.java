@@ -47,6 +47,20 @@ class Graph{
         
     }
 
+    public static void printGraph(ArrayList<Edge> graph[]) {
+
+    for (int i = 0; i < graph.length; i++) {
+
+        System.out.print("Vertex " + i + " -> ");
+
+        for (Edge e : graph[i]) {
+            System.out.print(e.dest + " ");
+        }
+
+        System.out.println();
+    }
+}
+
     
     
     public static void main(String[] args){
@@ -55,5 +69,6 @@ class Graph{
         ArrayList<Edge> graph[] = new ArrayList[v];
 
         createGraph(graph);
+        printGraph(graph);
     }
 }
