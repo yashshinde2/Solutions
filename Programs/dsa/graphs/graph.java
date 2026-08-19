@@ -54,13 +54,39 @@ class Graph{
             System.out.print("Vertex " + i + " -> ");
 
         for (Edge e : graph[i]) {
-            
+
             System.out.print(e.dest + " ");
         }
 
-        System.out.println();
+            System.out.println();
+        }
     }
-}
+
+    public static void bfs( ArrayList<Edge> graph[], int v){
+
+        Queue<Integer> q = new LinkedList<>();
+        boolean vis[] = new boolean[v];
+        q.add(0);
+
+        while(!q.isEmpty()){
+
+            int curr = q.remove();
+            if(vis[curr] == false){
+
+                System.out.print(curr + " ");
+                vis[curr] = true;
+            }
+
+            for(int i=0; i<graph[curr].size(); i++){
+
+                Edge e = graph[curr].get(i);
+                q.add(e.dest);
+            }
+
+        }
+
+    }
+
 
     
     
@@ -71,5 +97,7 @@ class Graph{
 
         createGraph(graph);
         printGraph(graph);
+
+        bfs(graph, v);
     }
 }
