@@ -37,16 +37,13 @@ class Dijkstra {
 
         int[] dist = new int[V];
 
-        // Initially, distance to every node is infinity
         Arrays.fill(dist, Integer.MAX_VALUE);
 
-        // Distance from source to itself
         dist[source] = 0;
 
         PriorityQueue<Pair> pq =
                 new PriorityQueue<>();
 
-        // Add source
         pq.add(new Pair(source, 0));
 
         while(!pq.isEmpty()) {
@@ -56,18 +53,15 @@ class Dijkstra {
             int node = current.node;
             int currentDist = current.distance;
 
-            // Ignore outdated entry
             if(currentDist != dist[node]) {
                 continue;
             }
 
-            // Visit all neighbors
             for(Edge e : graph[node]) {
 
                 int newDist =
                         currentDist + e.weight;
 
-                // Relaxation
                 if(newDist < dist[e.dest]) {
 
                     dist[e.dest] = newDist;
@@ -82,7 +76,6 @@ class Dijkstra {
             }
         }
 
-        // Print shortest distances
         for(int i = 0; i < V; i++) {
 
             System.out.println(
@@ -113,7 +106,6 @@ class Dijkstra {
         ArrayList<Edge>[] graph =
                 new ArrayList[V];
 
-        // Create ArrayLists
         for(int i = 0; i < V; i++) {
 
             graph[i] = new ArrayList<>();
