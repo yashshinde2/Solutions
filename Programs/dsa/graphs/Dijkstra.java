@@ -1,4 +1,4 @@
-//Dijkstra algorithm
+// Graphs - Dijkstra algorithm
 
 import java.util.*;
 
