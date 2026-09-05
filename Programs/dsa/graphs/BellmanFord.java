@@ -16,16 +16,12 @@ class BellmanFord {
 
     public static void bellmanFord(ArrayList<Edge> edges, int V, int src) {
 
-        // Step 1: Create distance array
         int dist[] = new int[V];
 
-        // Initially, distance of every vertex is infinity
         Arrays.fill(dist, Integer.MAX_VALUE);
 
-        // Distance from source to itself is 0
         dist[src] = 0;
 
-        // Step 2: Relax all edges V-1 times
         for (int i = 0; i < V - 1; i++) {
 
             for (Edge e : edges) {
@@ -34,7 +30,6 @@ class BellmanFord {
                 int v = e.dest;
                 int wt = e.wt;
 
-                // Relaxation
                 if (dist[u] != Integer.MAX_VALUE &&
                     dist[u] + wt < dist[v]) {
 
@@ -43,7 +38,6 @@ class BellmanFord {
             }
         }
 
-        // Step 3: Check for negative weight cycle
         for (Edge e : edges) {
 
             int u = e.src;
@@ -58,7 +52,6 @@ class BellmanFord {
             }
         }
 
-        // Print shortest distances
         System.out.println("Shortest distances from source " + src + ":");
 
         for (int i = 0; i < V; i++) {
